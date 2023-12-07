@@ -20,12 +20,12 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1 id="name">Xiao Yang</h1>
-        <h2 id="id">75991</h2>
-        <img id="photo" src="../static/图片1.jpg" alt="我的照片" width="200px" />
+    <div class="header" style="background: antiquewhite">
+        <h1 id="name" style="color: deeppink">Minghao Liu</h1>
+        <h2 id="id" style="color: blue">75990</h2>
+        <img id="photo" src="../static/图片1.jpg" alt="我的照片" height="300px" width="300px" />
     </div>
-    <table id="data-table">
+    <table id="data-table" bgcolor="#f0ffff">
         <thead>
             <tr>
                 <th>score</th>
@@ -40,19 +40,19 @@
     </table>
 
     <script>
-        $.get('/api/mydata', function(data) {
-    var tableBody = $('#data-table tbody');
-    data.forEach(function(item) {
-        var row = '<tr>';
-        row += '<td>' + item.score + '</td>';
-        row += '<td><a href="/city/' + encodeURIComponent(item.city) + '" target="_blank">' + item.city + '</a></td>';
-        row += '<td>' + item.title + '</td>';
-        row += '<td>' + item.review + '</td>';
-        row += '<td><img src="../static/score-' + item.score + '.jpg" alt="score image" width="50px"></td>';
-        row += '</tr>';
-        tableBody.append(row);
-    });
-});
+        $.get('/api/mydata', function (data) {
+            var tableBody = $('#data-table tbody');
+            data.forEach(function (item) {
+                var row = '<tr>';
+                row += '<td>' + item.score + '</td>';
+                row += '<td><a href="/city/' + encodeURIComponent(item.city) + '" target="_blank">' + item.city + '</a></td>';
+                row += '<td>' + item.title + '</td>';
+                row += '<td>' + item.review + '</td>';
+                row += '<td><img src="../static/score-' + item.score + '.jpg" alt="score image" width="50px"></td>';
+                row += '</tr>';
+                tableBody.append(row);
+            });
+        });
     </script>
 </body>
 </html>

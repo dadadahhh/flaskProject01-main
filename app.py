@@ -3,13 +3,10 @@ from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
 
-@app.route('/index')
+@app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/')
-def hello_world(): 
-    return 'Hello World!'
 
 @app.route('/api/mydata', methods=['GET'])
 def api_mydata():
